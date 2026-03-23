@@ -1,62 +1,53 @@
-# git ignore
-# Laravel
+# Dependencies
 /vendor
 /node_modules
+
+# Build assets
 /public/build
 /public/hot
+/public/storage
+
+# Storage
 /storage/*.key
 /storage/app/public
 /storage/framework/cache
 /storage/framework/sessions
 /storage/framework/views
 /storage/logs
+/storage/pail
 
-#composer lock
-composer.lock
-
-# Env files (IMPORTANT)
-.env
-.env.*.local
-.env.backup
-
-# Cache
+# Cache & Bootstrap
 /bootstrap/cache/*.php
+
+# Environment files (NEVER commit these)
+.env
+.env.backup
+.env.production
+.env.*.local
 
 # Testing
 .phpunit.result.cache
+/.phpunit.cache
 
 # Logs
 npm-debug.log
 yarn-error.log
 
-# IDE
+# IDE & Editor
 /.vscode
 /.idea
+/.fleet
+/.nova
+/.zed
+.phpactor.json
+
+# Auth
+/auth.json
+
+# Config files (optional)
+Homestead.json
+Homestead.yaml
 
 # OS
 .DS_Store
 Thumbs.db
-
-/.phpunit.cache
-/node_modules
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
-/storage/pail
-/vendor
-.env
-.env.backup
-.env.production
-.phpactor.json
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-/auth.json
-/.fleet
-/.idea
-/.nova
-/.vscode
-/.zed

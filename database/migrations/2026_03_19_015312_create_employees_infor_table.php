@@ -16,8 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->enum('sex', ['male', 'female']);
             $table->date('dob');
-            $table->string('phone_num');
+            $table->string('phone_numb');
             $table->string('email')->unique();
+            $table->foreignId('departments_id');
+            $table->foreignId('positions_id');
             $table->timestamps();
         });
     }

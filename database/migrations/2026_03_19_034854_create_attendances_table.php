@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('emplees_id');
+            $table->foreignId('employees_infor_id');
             $table->date('date');
-            $table->timestamps('check_in');
+            $table->time('check_in')->nullable();
+            $table->time('check_out')->nullable();
+            $table->enum('status', ['Present', 'Late', 'Absent']);
             $table->timestamps();
         });
     }
