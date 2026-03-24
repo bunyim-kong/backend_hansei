@@ -14,7 +14,7 @@ class Position extends Model
         'name',
     ];
 
-    public function employees_infor()
+    public function employees()
     {
         return $this -> belongsTo(EmployeeInfor::class);
     }

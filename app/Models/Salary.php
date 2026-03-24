@@ -15,7 +15,7 @@ class Salary extends Model
         'base_salary',
     ];
 
-    public function salaries()
+    public function employee()
 
     {
         return $this -> hasOne(EmployeeInfor::class);

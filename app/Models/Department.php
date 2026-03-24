@@ -7,7 +7,7 @@ use App\Models\EmployeeInfor;
 
 class Department extends Model
 {
-    protected $table = 'department';
+    protected $table = 'departments';
 
     protected $primaryKey = 'id';
 

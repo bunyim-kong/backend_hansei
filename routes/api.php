@@ -7,3 +7,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
+Route::get('/employees', function (Request $request) {
+    return "employees data";
+});

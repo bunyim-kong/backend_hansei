@@ -8,7 +8,7 @@ use PhpParser\Node\Expr\FuncCall;
 class EmployeeInfor extends Model
 
 {
-    protected $table = 'employeesinfor';
+    protected $table = 'employees_infor';
     
     protected $primaryKey = 'id';
 
@@ -29,7 +29,7 @@ class EmployeeInfor extends Model
 
     public function departments()
     {
-        return $this -> hasMany(Department::class);
+        return $this -> belongsTo(Department::class);
     }
 
     public function leaves()
@@ -39,7 +39,7 @@ class EmployeeInfor extends Model
 
     public function positions()
     {
-        return $this -> hasMany(Position::class);
+        return $this -> belongsTo(Position::class);
     }
 
     public function rosters()

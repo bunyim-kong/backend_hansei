@@ -17,7 +17,7 @@ class Roster extends Model
         'type',
     ];
 
-    public function rosters()
+    public function employees()
     {
         return $this -> belongsTo(EmployeeInfor::class);
     }

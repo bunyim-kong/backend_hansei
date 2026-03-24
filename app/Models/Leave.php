@@ -19,7 +19,7 @@ class Leave extends Model
         'status',
     ];
 
-    public function leaves()
+    public function employee()
     {
         return $this -> hasMany(EmployeeInfor::class);
     }
