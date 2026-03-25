@@ -1,12 +1,19 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmployeesInforController;
+use App\Http\Controllers\DepartmentController;
+use App\Models\Department;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+// employee information
+Route::get('/employees', [EmployeesInforController::class, 'index']);
+Route::get('/employees/{id}', [EmployeesInforController::class, 'show']);
 
-Route::get('/employees', function (Request $request) {
-    return "employees data";
-});
+// department information
+Route::get('/departments', [DepartmentController::class, 'index']);
+Route::get('/departments/{id}', [DepartmentController::class, 'show']);
+
+
+// Route::get('/employees', function () {
+//     return DB::table('employees_infor')->get();
+// });
