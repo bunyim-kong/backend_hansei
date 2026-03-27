@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('salaries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employees_info_id');
+
+            $table->unsignedBigInteger('employee_infor_id');
+            $table->foreignId('employees_infor_id')->references('id')->on('employees_infor');
+
             $table->string('base_salary');
             $table->timestamps();
         });

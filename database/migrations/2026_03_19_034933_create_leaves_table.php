@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('leaves', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employees_infor_id');
+
+            $table->unsignedBigInteger('employee_infor_id');
+            $table->foreignId('employees_infor_id')->references('id')->on('employees_infor');
+            
             $table->enum('type', ['Illness', 'Personal']);
             $table->date('start_date');
             $table->date('end_date');

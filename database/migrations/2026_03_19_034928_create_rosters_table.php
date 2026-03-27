@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('rosters', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employees_infor_id');
+
+            $table->unsignedBigInteger('employee_infor_id');
+            $table->foreignId('employees_infor_id')->references('id')->on('employees_infor');
+
             $table->date('start_time');
             $table->date('end_time');
             $table->enum('type', ['office', 'remote', 'off']);
