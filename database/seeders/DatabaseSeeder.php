@@ -11,7 +11,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             DepartmentSeeder::class,      // 1st — no dependencies
             PositionSeeder::class,        // 2nd — no dependencies
-            EmployeeInforSeeder::class,   // 3rd — needs departments + positions        // 7th — needs employees
+            EmployeeInforSeeder::class,
+            RosterInforSeeder::class,   // 3rd — needs departments + positions        // 7th — needs employees
         ]);
     }
 }

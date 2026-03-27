@@ -18,9 +18,11 @@ return new class extends Migration
             $table->date('dob');
             $table->string('phone_numb');
             $table->string('email')->unique();
-            $table->foreignId('departments_id');
             $table->foreignId('positions_id');
             $table->timestamps();
+
+            $table->unsignedBigInteger('department_id');
+            $table->foreign('department_id')->references('id')->on('departments');
         });
     }
 
