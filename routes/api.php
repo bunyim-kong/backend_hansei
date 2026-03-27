@@ -6,6 +6,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\PositionController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\RosterController;
 use App\Http\Controllers\SalaryController;
 
@@ -32,6 +33,8 @@ Route::get('/rosters/{id}', [RosterController::class, 'show']);
 Route::get('/salaries', [SalaryController::class, 'index']);
 Route::get('/salaries/{id}', [SalaryController::class, 'show']);
 
+Route::get('/report',[ReportController::class, 'index']);
+Route::get('/report/{id}',[ReportController::class, 'show']);
 
 //** ways that you can make api withtout controller
 

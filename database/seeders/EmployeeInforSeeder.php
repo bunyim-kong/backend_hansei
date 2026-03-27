@@ -11,7 +11,7 @@ class EmployeeInforSeeder extends Seeder
     public function run(): void
     {
         $employees = [
-            ['name' => 'Sophea Chan',    'sex' => 'female', 'dob' => '1990-05-14', 'phone_numb' => '012345678', 'email' => 'sophea.chan@company.com',    'departments_id' => 1, 'positions_id' => 1],
+            ['name' => 'Sophea Chan',    'sex' => 'female', 'dob' => '1990-05-14', 'phone_numb' => '012345678', 'email' => 'sophea.chan2@company.com',    'departments_id' => 1, 'positions_id' => 1],
             ['name' => 'Dara Meas',      'sex' => 'male',   'dob' => '1993-08-20', 'phone_numb' => '012345679', 'email' => 'dara.meas@company.com',      'departments_id' => 1, 'positions_id' => 2],
             ['name' => 'Ratha Lim',      'sex' => 'male',   'dob' => '1988-11-02', 'phone_numb' => '098765432', 'email' => 'ratha.lim@company.com',      'departments_id' => 2, 'positions_id' => 3],
             ['name' => 'Pisey Keo',      'sex' => 'female', 'dob' => '1995-03-22', 'phone_numb' => '077123456', 'email' => 'pisey.keo@company.com',      'departments_id' => 2, 'positions_id' => 4],
@@ -36,6 +36,20 @@ class EmployeeInforSeeder extends Seeder
                 'created_at'     => Carbon::now(),
                 'updated_at'     => Carbon::now(),
             ]);
+
+
+            DB::table('employees_infor')->updateOrInsert(
+                ['email' => 'sophea.chan2@company.com'], // check
+                [
+                    'name' => 'Sophea Chan',
+                    'sex' => 'female',
+                    'dob' => '1990-05-14',
+                    'phone_numb' => '012345678',
+                    'departments_id' => 1,
+                    'positions_id' => 1,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]);
         }
     }
 }
