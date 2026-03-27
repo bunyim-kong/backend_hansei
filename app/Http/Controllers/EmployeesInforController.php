@@ -9,11 +9,11 @@ class EmployeesInforController extends Controller
 {
     public function index()
     {
-        return EmployeeInfor::all();
+        return EmployeeInfor::with(['positions', 'departments'])->get();
     }
 
     public function show(EmployeeInfor $employeeInfor)
     {
-        return $employeeInfor;
+        return $employeeInfor->load(['positions', 'departments']);
     }
 }

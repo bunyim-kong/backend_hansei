@@ -16,6 +16,6 @@ class Position extends Model
 
     public function employees()
     {
-        return $this -> belongsTo(EmployeeInfor::class);
+        return $this -> hasMany(EmployeeInfor::class);
     }
 }
