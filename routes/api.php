@@ -8,6 +8,13 @@ use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\RosterController;
 use App\Http\Controllers\SalaryController;
+use App\Http\Controllers\AuthController;
+
+
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login',    [AuthController::class, 'login']);
+Route::post('/logout',   [AuthController::class, 'logout'])->middleware('auth:sanctum');
 
 // employee information
 Route::get('/employees', [EmployeesInforController::class, 'index']);
@@ -18,7 +25,8 @@ Route::get('/departments', [DepartmentController::class, 'index']);
 Route::get('/departments/{id}', [DepartmentController::class, 'show']);
 
 Route::get('/attendances', [AttendanceController::class, 'index']);
-Route::get('/attendances/{id}', [AttendanceController::class, 'show']);
+Route::post('/attendances', [AttendanceController::class, 'store']);
+Route::put('/attendances/{id}', [AttendanceController::class, 'update']);
 
 Route::get('/leaves', [LeaveController::class, 'index']);
 Route::get('/leaves/{id}', [LeaveController::class, 'show']);

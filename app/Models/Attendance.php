@@ -3,14 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\EmployeeInfor;
 
 class Attendance extends Model
 {
-    protected $table = 'attendances';
-
-    protected $primaryKey = 'id';
-
     protected $fillable = [
         'employees_infor_id',
         'date',
@@ -19,9 +14,8 @@ class Attendance extends Model
         'status',
     ];
 
-    public function emmployees_infor()
+    public function employee()
     {
-        return $this->belongsTo(EmployeeInfor::class);
+        return $this->belongsTo(EmployeesInfor::class, 'employees_infor_id');
     }
-
 }
